@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,11 @@
 		24801A1B26244028009E1AED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24801A1926244028009E1AED /* LaunchScreen.storyboard */; };
 		24801A2626244029009E1AED /* JsonPlaceHolderPostsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24801A2526244029009E1AED /* JsonPlaceHolderPostsTests.swift */; };
 		24801A3126244029009E1AED /* JsonPlaceHolderPostsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24801A3026244029009E1AED /* JsonPlaceHolderPostsUITests.swift */; };
+		24801A4826244093009E1AED /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24801A4726244093009E1AED /* Post.swift */; };
+		24801A5126244879009E1AED /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 24801A5026244879009E1AED /* Alamofire */; };
+		24801A572624488D009E1AED /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 24801A562624488D009E1AED /* SwiftyJSON */; };
+		24801A6226246AA3009E1AED /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24801A6126246AA3009E1AED /* Album.swift */; };
+		24801A702624904C009E1AED /* Employees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24801A6F2624904C009E1AED /* Employees.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,9 @@
 		24801A2C26244029009E1AED /* JsonPlaceHolderPostsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JsonPlaceHolderPostsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24801A3026244029009E1AED /* JsonPlaceHolderPostsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPlaceHolderPostsUITests.swift; sourceTree = "<group>"; };
 		24801A3226244029009E1AED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24801A4726244093009E1AED /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		24801A6126246AA3009E1AED /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		24801A6F2624904C009E1AED /* Employees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employees.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24801A572624488D009E1AED /* SwiftyJSON in Frameworks */,
+				24801A5126244879009E1AED /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +111,12 @@
 		24801A0A26244028009E1AED /* JsonPlaceHolderPosts */ = {
 			isa = PBXGroup;
 			children = (
+				24801A462624405F009E1AED /* Models */,
+				24801A4126244042009E1AED /* Controllers */,
+				24801A4526244050009E1AED /* Views */,
 				24801A0B26244028009E1AED /* AppDelegate.swift */,
 				24801A0D26244028009E1AED /* SceneDelegate.swift */,
-				24801A0F26244028009E1AED /* ViewController.swift */,
-				24801A1126244028009E1AED /* Main.storyboard */,
 				24801A1726244028009E1AED /* Assets.xcassets */,
-				24801A1926244028009E1AED /* LaunchScreen.storyboard */,
 				24801A1C26244028009E1AED /* Info.plist */,
 				24801A1426244028009E1AED /* JsonPlaceHolderPosts.xcdatamodeld */,
 			);
@@ -131,6 +141,33 @@
 			path = JsonPlaceHolderPostsUITests;
 			sourceTree = "<group>";
 		};
+		24801A4126244042009E1AED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				24801A0F26244028009E1AED /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		24801A4526244050009E1AED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24801A1926244028009E1AED /* LaunchScreen.storyboard */,
+				24801A1126244028009E1AED /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		24801A462624405F009E1AED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				24801A4726244093009E1AED /* Post.swift */,
+				24801A6126246AA3009E1AED /* Album.swift */,
+				24801A6F2624904C009E1AED /* Employees.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +184,10 @@
 			dependencies = (
 			);
 			name = JsonPlaceHolderPosts;
+			packageProductDependencies = (
+				24801A5026244879009E1AED /* Alamofire */,
+				24801A562624488D009E1AED /* SwiftyJSON */,
+			);
 			productName = JsonPlaceHolderPosts;
 			productReference = 24801A0826244028009E1AED /* JsonPlaceHolderPosts.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +259,10 @@
 				Base,
 			);
 			mainGroup = 248019FF26244027009E1AED;
+			packageReferences = (
+				24801A4F26244879009E1AED /* XCRemoteSwiftPackageReference "Alamofire" */,
+				24801A552624488D009E1AED /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 24801A0926244028009E1AED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,6 +310,9 @@
 				24801A1626244028009E1AED /* JsonPlaceHolderPosts.xcdatamodeld in Sources */,
 				24801A0C26244028009E1AED /* AppDelegate.swift in Sources */,
 				24801A0E26244028009E1AED /* SceneDelegate.swift in Sources */,
+				24801A702624904C009E1AED /* Employees.swift in Sources */,
+				24801A4826244093009E1AED /* Post.swift in Sources */,
+				24801A6226246AA3009E1AED /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +639,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24801A4F26244879009E1AED /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.2;
+			};
+		};
+		24801A552624488D009E1AED /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24801A5026244879009E1AED /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24801A4F26244879009E1AED /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		24801A562624488D009E1AED /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24801A552624488D009E1AED /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		24801A1426244028009E1AED /* JsonPlaceHolderPosts.xcdatamodeld */ = {
